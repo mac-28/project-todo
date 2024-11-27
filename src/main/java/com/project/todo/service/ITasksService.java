@@ -1,0 +1,16 @@
+package com.project.todo.service;
+
+import com.project.todo.dto.TaskDto;
+import com.project.todo.entity.Task;
+
+import java.util.List;
+
+public interface ITasksService {
+
+    public void createTask(TaskDto taskDto);
+    public List<Task> fetchTasks();
+
+    public Task fetchTask(long taskId);
+    public Task updateTask(long taskId,TaskDto taskDto);
+    public void deleteTask(long taskId);
+}

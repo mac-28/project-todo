@@ -1,0 +1,30 @@
+package com.project.todo.dto;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotEmpty;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@Schema(name = "Task",
+        description = "Schema to hold Task Information"
+)
+public class TaskDto {
+
+    @Schema(name = "Id",description = "Id of the Task",example = "1")
+    private long taskId;
+
+    @Schema(description = "Title of the Task",example = "Study")
+    @NotEmpty(message = "Title cannot be null or empty")
+    private String title;
+
+    @Schema(description = "Description of the Task",example = "study for half hour")
+    @NotEmpty(message = "Description cannot be null or empty")
+    private String description;
+
+    @Schema(description = "Status of the Task",example = "false")
+    private boolean isCompleted;
+}
